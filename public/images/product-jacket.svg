@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 875" role="img" aria-label="HIGHLAND JACKET">
+  <rect width="700" height="875" fill="#ded9d0"/>
+  <path d="M0 641c105-45 215-61 330-48 123 14 246 5 370-41v323H0Z" fill="#aea89d"/>
+  <path d="M252 187h196c52 65 87 155 105 270l40 214c9 49-31 93-81 88l-324-31c-48-5-80-52-68-99l59-226c21-83 45-154 73-216Z" fill="#1b1a18"/>
+  <path d="M318 197c24 55 29 137 14 247l-64 281" stroke="#d7d2c8" stroke-width="3" opacity=".18"/>
+  <path d="M386 197c-21 64-24 151-10 262l54 285" stroke="#d7d2c8" stroke-width="3" opacity=".18"/>
+  <path d="M290 204c36 43 76 45 121 0l34 58c-68 35-131 34-190-2Z" fill="#0d0c0b"/>
+  <path d="M234 328c-57 60-94 141-110 242l90 38 78-253Z" fill="#24221f"/>
+  <path d="M473 330c67 61 107 139 122 235l-88 45-89-256Z" fill="#22201d"/>
+</svg>

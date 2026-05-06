@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 875" role="img" aria-label="PAPAKHA HOODIE">
+  <rect width="700" height="875" fill="#e4e0d7"/>
+  <path d="M0 650c110-52 210-78 300-78 115 0 230 31 400 11v292H0Z" fill="#c4beb3"/>
+  <ellipse cx="350" cy="220" rx="107" ry="63" fill="#151413"/>
+  <path d="M247 277c18-75 61-121 103-121s86 48 104 121v62H247Z" fill="#24221f"/>
+  <path d="M208 341c31-65 81-99 142-99 68 0 121 39 156 116l73 292c15 58-30 114-90 111l-285-14c-58-3-99-58-85-114Z" fill="#1a1917"/>
+  <path d="M253 372c59 37 128 42 201 2l28 105c-77 33-160 28-249-15Z" fill="#0e0d0c"/>
+  <path d="M167 422c-58 65-89 143-94 235l103 27 80-247Z" fill="#24221f"/>
+  <path d="M523 423c61 61 97 134 109 220l-99 39-87-241Z" fill="#22201d"/>
+  <g opacity=".2" stroke="#efede8" stroke-width="3">
+    <path d="M307 287c12 38 14 88 5 151"/>
+    <path d="M395 288c-14 47-14 95-1 146"/>
+  </g>
+</svg>

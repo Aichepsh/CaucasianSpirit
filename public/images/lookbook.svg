@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1100" role="img" aria-label="QORU lookbook image">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1">
+      <stop offset="0" stop-color="#c6c0b5"/>
+      <stop offset=".5" stop-color="#ebe7df"/>
+      <stop offset="1" stop-color="#7d7971"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency=".65" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer><feFuncA type="table" tableValues="0 .14"/></feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="900" height="1100" fill="url(#bg)"/>
+  <path d="M0 666c172-57 286-62 420-39 156 27 299 11 480-80v553H0Z" fill="#67645d"/>
+  <path d="M0 742c198-22 316 28 510 36 130 6 259-12 390-54v376H0Z" fill="#a9a49a"/>
+  <path d="M397 304c-33 54-48 113-45 177l186 20c16-77 5-142-33-196-31-29-71-30-108-1Z" fill="#171615"/>
+  <path d="M334 506c134 44 260 43 377-9l46 305c11 76-48 143-124 140l-262-12c-70-3-121-69-105-137Z" fill="#25231f"/>
+  <path d="M269 570c-65 87-102 173-111 258l113 27 97-287Z" fill="#1a1917"/>
+  <path d="M711 543c70 66 116 143 139 231l-96 48-101-255Z" fill="#201e1b"/>
+  <rect width="900" height="1100" filter="url(#grain)"/>
+</svg>

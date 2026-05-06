@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 875" role="img" aria-label="ORNAMENT LONGSLEEVE">
+  <rect width="700" height="875" fill="#e9e5dc"/>
+  <path d="M0 622c130-44 238-55 322-35 111 26 224 32 378-25v313H0Z" fill="#cfc8bd"/>
+  <path d="M271 176h158l47 115-33 384c-3 37-35 64-72 61l-67-4c-34-2-61-29-64-63l-22-373Z" fill="#22201d"/>
+  <path d="M216 288c-67 71-109 150-126 238l86 47 100-258Z" fill="#201e1b"/>
+  <path d="M485 292c72 70 117 148 136 233l-85 51-110-259Z" fill="#1c1b19"/>
+  <path d="M282 184c42 38 90 38 144 0l-2 61c-46 29-93 29-141 0Z" fill="#0e0d0c"/>
+  <g fill="#d8d2c8" opacity=".18">
+    <rect x="246" y="282" width="12" height="260"/>
+    <rect x="442" y="284" width="12" height="260"/>
+    <path d="M252 334h196v8H252zM252 410h196v8H252zM252 486h196v8H252z"/>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-label="QORU campaign image">
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#d8d4cb"/>
+      <stop offset="0.52" stop-color="#eeeae2"/>
+      <stop offset="1" stop-color="#b7b1a7"/>
+    </linearGradient>
+    <linearGradient id="cloth" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#11100f"/>
+      <stop offset="1" stop-color="#38352f"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="table" tableValues="0 0.18"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  <rect width="900" height="1200" fill="url(#sky)"/>
+  <path d="M0 645 145 482l118 101 107-178 167 211 116-94 247 184v494H0Z" fill="#8d887f"/>
+  <path d="M0 720 184 594l151 80 145-155 172 168 248-96v609H0Z" fill="#5d5a54" opacity=".72"/>
+  <path d="M0 804c126-42 245-62 360-60 171 3 309 63 540 48v408H0Z" fill="#d8d3ca" opacity=".45"/>
+  <ellipse cx="470" cy="347" rx="82" ry="53" fill="#171615"/>
+  <circle cx="470" cy="407" r="54" fill="#2b2925"/>
+  <path d="M358 518c25-74 70-109 130-108 72 1 121 48 146 139l70 309c15 66-35 130-103 124l-244-21c-60-5-100-64-84-122Z" fill="url(#cloth)"/>
+  <path d="M374 547c70 52 165 53 246-1l20 88c-82 40-182 39-288-5Z" fill="#0f0e0d" opacity=".7"/>
+  <path d="M296 677c-49 49-83 125-102 228l111 27 45-235Z" fill="#23211e"/>
+  <path d="M670 666c62 43 109 111 141 203l-103 47-80-226Z" fill="#26231f"/>
+  <rect x="0" y="0" width="900" height="1200" filter="url(#grain)"/>
+</svg>

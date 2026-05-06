@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 900" role="img" aria-label="Dark fabric detail">
+  <defs>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="5"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="gamma" amplitude=".75" exponent="1.4"/>
+        <feFuncG type="gamma" amplitude=".72" exponent="1.4"/>
+        <feFuncB type="gamma" amplitude=".68" exponent="1.4"/>
+      </feComponentTransfer>
+    </filter>
+    <linearGradient id="shade" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#121110"/>
+      <stop offset=".55" stop-color="#2a2722"/>
+      <stop offset="1" stop-color="#0c0b0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="900" height="900" fill="url(#shade)"/>
+  <rect width="900" height="900" filter="url(#noise)" opacity=".45"/>
+  <g opacity=".22" stroke="#d8d2c8" stroke-width="1">
+    <path d="M-80 95 C210 138 432 100 980 154"/>
+    <path d="M-70 231 C208 272 496 230 967 286"/>
+    <path d="M-90 377 C226 405 453 377 985 430"/>
+    <path d="M-70 534 C181 564 510 512 980 586"/>
+    <path d="M-90 701 C270 738 520 674 990 741"/>
+    <path d="M82 -80 C138 198 90 430 151 990"/>
+    <path d="M235 -80 C276 250 225 468 286 990"/>
+    <path d="M390 -80 C421 206 374 490 438 990"/>
+    <path d="M554 -80 C590 224 530 512 600 990"/>
+    <path d="M724 -80 C770 232 702 486 758 990"/>
+  </g>
+</svg>
