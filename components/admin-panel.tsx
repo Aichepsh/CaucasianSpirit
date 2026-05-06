@@ -135,6 +135,10 @@ function normalizeFooterLinks(links: FooterLink[]) {
     .map((link, index) => ({ ...link, sortOrder: index }));
 }
 
+function assignFooterLinkOrder(links: FooterLink[]) {
+  return links.map((link, index) => ({ ...link, sortOrder: index }));
+}
+
 const statusOptions: Array<{ value: ProductStatus; label: string }> = [
   { value: "NEW", label: "Новый" },
   { value: "LIMITED", label: "Лимит" },
@@ -425,6 +429,10 @@ export function AdminPanel() {
     drops.find((drop) => drop.isActive) ??
     drops[0] ??
     fallbackDrop;
+  const settingsActiveDrop =
+    drops.find((drop) => drop.id === settings.activeDropId && !isDraftDrop(drop)) ??
+    drops.find((drop) => drop.isActive && !isDraftDrop(drop)) ??
+    null;
   const dropHeroDisplayUrl = dropHeroPreviewUrl ?? editingDrop?.heroImageUrl ?? focusedDrop.heroImageUrl;
 
   useEffect(() => {
@@ -661,7 +669,7 @@ export function AdminPanel() {
       const next = sorted.slice();
       const [picked] = next.splice(fromIndex, 1);
       next.splice(toIndex, 0, picked);
-      return normalizeFooterLinks(next);
+      return assignFooterLinkOrder(next);
     });
   }
 
@@ -681,7 +689,7 @@ export function AdminPanel() {
       const [picked] = next.splice(fromIndex, 1);
       const insertIndex = targetIndex > fromIndex ? targetIndex - 1 : targetIndex;
       next.splice(insertIndex, 0, picked);
-      return normalizeFooterLinks(next);
+      return assignFooterLinkOrder(next);
     });
     setFooterMoveSourceId(null);
   }
@@ -1137,30 +1145,15 @@ export function AdminPanel() {
             />
           </Field>
           <Field label="Активный дроп" wide>
-            <select
-              value={
-                drops.some((drop) => drop.id === settings.activeDropId && !isDraftDrop(drop))
-                  ? settings.activeDropId ?? ""
-                  : ""
-              }
-              onChange={(event) => {
-                const nextActiveDropId = event.target.value || null;
-                updateSettings({ activeDropId: nextActiveDropId });
-                if (nextActiveDropId) {
-                  setFocusedDropId(nextActiveDropId);
-                }
-              }}
-              className="h-11 w-full border border-ink/25 bg-bone px-3 text-sm uppercase outline-none focus:border-ink"
-            >
-              <option value="">не выбран</option>
-              {drops
-                .filter((drop) => !isDraftDrop(drop) && drop.status === "live")
-                .map((drop) => (
-                <option key={drop.id} value={drop.id}>
-                  {drop.dropNumber} · {drop.title} · {drop.season}
-                </option>
-              ))}
-            </select>
+            <div className="flex min-h-11 items-center border border-ink/25 bg-bone px-3 text-sm font-black uppercase">
+              {settingsActiveDrop
+                ? `DROP ${settingsActiveDrop.dropNumber} · ${settingsActiveDrop.title} · ${settingsActiveDrop.season}`
+                : "Активный дроп не выбран"}
+            </div>
+            <p className="mt-2 text-xs leading-5 text-muted">
+              Активный дроп выбирается в истории дропов через переключатель
+              «Использовать на сайте».
+            </p>
           </Field>
         </div>
         <Button
@@ -1664,18 +1657,13 @@ export function AdminPanel() {
         onClose={() => setDropProductPreviewId(null)}
       />
 
-      <div
-        className={`fixed inset-0 z-50 transition ${drawerOpen ? "pointer-events-auto" : "pointer-events-none"}`}
-      >
+      {drawerOpen ? (
+      <div className="fixed inset-0 z-50">
         <div
-          className={`absolute inset-0 bg-ink/35 transition-opacity ${drawerOpen ? "opacity-100" : "opacity-0"}`}
+          className="absolute inset-0 bg-ink/35"
           onClick={closeDrawer}
         />
-        <div
-          className={`absolute inset-0 overflow-y-auto bg-stonepaper px-4 pb-10 pt-5 transition-transform duration-300 ${
-            drawerOpen ? "translate-y-0" : "translate-y-full"
-          }`}
-        >
+        <div className="absolute inset-0 overflow-y-auto bg-stonepaper px-4 pb-10 pt-5">
           <div className="mx-auto max-w-4xl">
             <div className="flex items-center justify-between">
               <p className="text-[11px] font-bold uppercase tracking-label text-muted">
@@ -1714,7 +1702,7 @@ export function AdminPanel() {
                   }}
                 />
               </Field>
-              <Field label="Подпись / русское название">
+              <Field label="Подпись">
                 <Input
                   value={draft.subtitle}
                   onChange={(event) => updateDraft("subtitle", event.target.value)}
@@ -2008,6 +1996,7 @@ export function AdminPanel() {
           </div>
         </div>
       </div>
+      ) : null}
     </div>
   );
 }

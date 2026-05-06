@@ -1,10 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
-import { fallbackDrop, principles } from "@/data/qoru";
+import { fallbackDrop } from "@/data/qoru";
 import { ProductCard } from "@/components/product-card";
-import { SectionHeading } from "@/components/section-heading";
-import { Principles } from "@/components/principles";
 import { Stats } from "@/components/stats";
 import { Footer } from "@/components/footer";
 import { SupabaseSetupNotice } from "@/components/supabase-setup-notice";
@@ -136,24 +134,6 @@ export default async function HomePage() {
         >
           О бренде <ArrowUpRight size={16} strokeWidth={1.5} />
         </Link>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <SectionHeading eyebrow="03 — MOOD" title="LOOKBOOK" meta={currentDrop.season || ""} />
-        <div className="relative aspect-[5/6] overflow-hidden border border-line bg-field md:aspect-[16/9]">
-          <Image
-            src="/images/lookbook.svg"
-            alt={`Lookbook ${BRAND_NAME}`}
-            fill
-            sizes="100vw"
-            className="object-cover"
-          />
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-4 py-12">
-        <SectionHeading eyebrow="04 — ПРИНЦИПЫ" title="ТИХАЯ СИЛА" />
-        <Principles items={principles} />
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-12">
